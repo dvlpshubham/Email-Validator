@@ -15,11 +15,10 @@ public class RegexValidation {
     static public boolean isValid(String regex, String input) {
         Pattern pattern = Pattern.compile(regex);
         return Pattern.matches(regex, input);
-
     }
 
     public static void main(String[] args) {
-        boolean regexCheck = isValid("^[a-z]{1,10}[@][a-z]{1,10}$", "abc@yahoo");
+        boolean regexCheck = isValid("^[a-z]{1,10}[\\@][a-z]{1,10}[\\.][a-z]{1,3}$", "abc@yahoo.com");
         System.out.println(regexCheck);
     }
 }
